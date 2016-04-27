@@ -1070,3 +1070,11 @@ zoroastrian_tolerance = {
 	intrigue = -1
 	icon = 18
 }
+
+gone_raiding = {
+	icon = 1
+	global_tax_modifier = -0.1
+	global_revolt_risk = 0.05
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+}

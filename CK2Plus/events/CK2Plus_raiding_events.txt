@@ -1,0 +1,573 @@
+namespace = Plus
+
+#reserved: Plus.3500 to Plus.3599
+
+#######################################
+# RAIDING EVENTS
+# CK2+ events by vukica
+#######################################
+
+# There are three types of raids.
+# All of them are accessed from Plus.3500
+#
+# EVTOPTA_PLUS_3500 is the Level 2 raid. Basically, take warriors, but them on boats,
+# sail for a few weeks, pillage, then come home. This is the substitute of the vanilla,
+# oh, so poorly thought through, raiding.
+# That means it has two participants, the raider and the target.
+# Raider selects his target and type of holding they want to hit.
+# Player will be able to select ANY county within allowed distance.
+# AI will be given an appropriate target.
+#
+# EVTOPTB_PLUS_3500 is the Level 1 raid. I call it the poor man's raid. No investment
+# is needed. It just a bunch of guys with war axes going to raid the village next
+# door. This type of raid has only one participant, the raider. The target is
+# "some settlement", 5-6 days away by foot or a boat. They get there, maybe they get
+# some cash, maybe they capture slaves, maybe they get caught and have to ransom themselves,
+# or maybe, they get killed. Anything can happen.
+#
+# EVTOPTC_PLUS_3500 is the Level 3 raid. Sometimew when a level 2 raid, takes the raider
+# to a far away land, the raider will get information about other places. These special
+# locations will be sites like Paris, Rome, Alexandria, Antioch, Byzantium etc.
+# Once a raider get's information about such a location they will be able to start their 
+# next raid targeting that location.
+# These locations will only unlock if the character is a king, has good atributes, and 
+# has a bit of luck.
+
+# The D option will probably be "I've changed my mind"
+
+# Select raid level event
+# Ruler begins planning the raids
+# Sender: Decision (Raider)
+# Receiver: Raider
+character_event = {
+	id = Plus.3500
+	desc = EVTDESC_Plus_3500
+	picture = GFX_evt_viking_throneroom_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = preparing_raid
+	}
+	
+	#We will go across the sea!
+	option = {
+		name = EVTOPTA_Plus_3500
+		custom_tooltip = { text = EVTOPTA_Plus_3500_tooltip }
+		hidden_tooltip = {
+			set_character_flag = selecting_raid_target
+		}
+	}
+	
+	#Neighbouring realms look rich enough!
+	option = {
+		name = EVTOPTB_Plus_3500
+		custom_tooltip = { text = EVTOPTB_Plus_3500_tooltip }
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier  = gone_raiding
+			}
+		}
+		character_event = { id = Plus.3520 }
+	}
+}
+
+# Target is selected, ruler should decide the size of investment.
+# First version will default to the middle choice
+# Sender: Decision (Raider)
+# Receiver: Raider
+character_event = {
+	id = Plus.3501
+	desc = EVTDESC_Plus_3501
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Moderate investment
+	#TODO: add low and high investment
+	option = {
+		name = EVTOPTA_Plus_3501
+		custom_tooltip = { text = EVTOPTA_Plus_3501_tooltip }
+		hidden_tooltip = {
+			#Have to scale this somehow based on available loot or something in selected target.
+			#Decide later
+			wealth = -25
+			save_event_target_as = raid_leader
+			#Add hope province modifier
+			event_target:raid_county = {
+				owner = {
+					character_event = { id = Plus.3502 days = 1}
+				}
+			}
+		}
+	}
+}
+
+# Event for targeted character about strange ships sighted
+# Sender: Decision (Raider)
+# Receiver: Target
+character_event = {
+	id = Plus.3502
+	desc = EVTDESC_PLUS_3502
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Curses etc. ... 
+	option = {
+		name = EVTOPTA_Plus_3502
+		custom_tooltip = { text = EVTOPTA_Plus_3502_tooltip }
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = Plus.3503 days = 1}
+			}
+		}
+	}
+}
+
+# Surely the enemy has seen us already
+# We will be at their gates soon... but where.
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3503
+	desc = EVTDESC_Plus_3503
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Peasants are easy targets, they won't have time to react from their forts
+	option = {
+		name = EVTOPTA_Plus_3503
+		custom_tooltip = { text = EVTOPTA_Plus_3503_tooltip }
+		hidden_tooltip = {
+			#Raid countryside
+			FROM = { character_event = {id = Plus.3504 days = 1}}
+		}
+	}
+
+	#That town looks like it holds many treasures
+	#More money
+	option = {
+		name = EVTOPTB_Plus_3503
+		custom_tooltip = { text = EVTOPTB_Plus_3503_tooltip }
+		hidden_tooltip = {
+			#Raid city
+			FROM = { character_event = {id = Plus.3505 days = 1}}
+		}
+	}
+	
+    #Raid the infidel temple
+	#Get piety, slightly less money than city
+	option = {
+		name = EVTOPTC_Plus_3503
+		trigger = {
+			NOT = { religion = FROM }
+		}
+		custom_tooltip = { text = EVTOPTC_Plus_3503_tooltip }
+		hidden_tooltip = {
+			#Raid temple
+			FROM = { character_event = {id = Plus.3506 days = 1}}
+		}
+	}
+	
+	#Raid the castle/tribe
+	#Moderate cash, potential for high value hostages
+	#Could have a follow up with additional raid of temple/town
+	#which in this case remain unprotected after castle is ... dealt with.
+	option = {
+		name = EVTOPTD_Plus_3503
+		custom_tooltip = { text = EVTOPTD_Plus_3503_tooltip }
+		hidden_tooltip = {
+			#Raid castle/tribe
+			FROM = { character_event = {id = Plus.3507 days = 1}}
+		}
+	}
+}
+
+# Decided to pillage countryside
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3504
+	desc = EVTDESC_Plus_3504
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Send troops after them
+	option = {
+		name = EVTOPTA_Plus_3504
+		custom_tooltip = { text = EVTOPTA_Plus_3504_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3508 days = 1}}
+		}
+	}
+	
+	#Do nothing
+	option = {
+		name = EVTOPTB_Plus_3504
+		custom_tooltip = { text = EVTOPTB_Plus_3504_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3509 days = 1}}
+		}
+	}
+}
+
+# Decided to pillage town
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3505
+	desc = EVTDESC_Plus_3505
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Send troops there
+	option = {
+		name = EVTOPTA_Plus_3505
+		custom_tooltip = { text = EVTOPTA_Plus_3505_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3508 days = 1}}
+		}
+	}
+	
+	#Do nothing
+	option = {
+		name = EVTOPTB_Plus_3505
+		custom_tooltip = { text = EVTOPTB_Plus_3505_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3509 days = 1}}
+		}
+	}
+}
+
+# Decided to pillage temple
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3506
+	desc = EVTDESC_Plus_3506
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Send troops there
+	option = {
+		name = EVTOPTA_Plus_3506
+		custom_tooltip = { text = EVTOPTA_Plus_3506_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3508 days = 1}}
+		}
+	}
+	
+	#Do nothing
+	option = {
+		name = EVTOPTB_Plus_3506
+		custom_tooltip = { text = EVTOPTB_Plus_3506_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3509 days = 1}}
+		}
+	}
+}
+
+# Decided to attack the castle
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3507
+	desc = EVTDESC_Plus_3507
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Let's fight
+	option = {
+		name = EVTOPTA_Plus_3507
+		custom_tooltip = { text = EVTOPTA_Plus_3507_tooltip }
+		hidden_tooltip = {
+			character_event = { id = Plus.3516 days = 1}
+		}
+	}
+	
+	#Run and hide.
+	option = {
+		name = EVTOPTB_Plus_3507
+		custom_tooltip = { text = EVTOPTB_Plus_3507_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3510 days = 1}}
+		}
+	}
+	
+	#Evacuate castle, circle behind, and ambush raiders when they return.
+	#this will need high marshall and brilliant strategist traits
+	#option = {
+	#	name = EVTOPTC_Plus_3507
+	#	custom_tooltip = { text = EVTOPTC_Plus_3507_tooltip }
+	#	hidden_tooltip = {
+	#		FROM = { character_event = { id = Plus.3511 days = 1}}
+	#	}
+	#}
+}
+
+# Reinforcement sent
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3508
+	desc = EVTDESC_Plus_3508
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Leave now, return to boats
+	option = {
+		name = EVTOPTA_Plus_3508
+		custom_tooltip = { text = EVTOPTA_Plus_3508_tooltip }
+		hidden_tooltip = {
+			character_event = { id = Plus.3512 days = 1}
+		}
+	}
+	
+	#Let's fight
+	option = {
+		name = EVTOPTB_Plus_3508
+		custom_tooltip = { text = EVTOPTB_Plus_3508_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3516 days = 1}}
+		}
+	}
+}
+
+# No reinforcements, party on!
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3509
+	desc = EVTDESC_Plus_3509
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Finnish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3509
+		custom_tooltip = { text = EVTOPTA_Plus_3509_tooltip }
+		hidden_tooltip = {
+			FROM = {character_event = { id = Plus.3513 days = 1}}
+		}
+	}
+}
+
+# Enemy leader ran, penalty for castle, fight
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3510
+	desc = EVTDESC_Plus_3510
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#boom
+	option = {
+		name = EVTOPTA_Plus_3510
+		custom_tooltip = { text = EVTOPTA_Plus_3510_tooltip }
+		hidden_tooltip = {
+			FROM = { character_event = { id = Plus.3516 days = 1}}
+		}
+	}
+}
+
+# Reinforcement arriving, returning to boats
+# Sender: Raider
+# Receiver: Raider
+character_event = {
+	id = Plus.3512
+	desc = EVTDESC_Plus_3512
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Finnish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3512
+		custom_tooltip = { text = EVTOPTA_Plus_3512_tooltip }
+		hidden_tooltip = {
+			event_target:raid_county = {
+				owner = {
+					character_event = { id = Plus.3513 days = 1}}
+			}
+		}
+	}
+}
+
+# Finish raid and return home (for target)
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3513
+	desc = EVTDESC_Plus_3513
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Finnish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3513
+		custom_tooltip = { text = EVTOPTA_Plus_3513_tooltip }
+		hidden_tooltip = {
+			FROM = {character_event = { id = Plus.3514 days = 1 }}
+		}
+	}
+}
+
+# Finish raid and return home (for raider)
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3514
+	desc = EVTDESC_Plus_3514
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Finnish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3514
+		custom_tooltip = { text = EVTOPTA_Plus_3514_tooltip }
+		hidden_tooltip = {
+			character_event = { id = Plus.3515 days = 1 }
+		}
+	}
+}
+
+# Raider is home
+# Sender: Raider
+# Receiver: Raider
+character_event = {
+	id = Plus.3515
+	desc = EVTDESC_Plus_3515
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#Finnish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3515
+	}
+}
+
+# Fight event (from raider)
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3516
+	desc = EVTDESC_Plus_3516
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_Plus_3516
+		custom_tooltip = { text = EVTOPTA_Plus_3516_tooltip }
+		hidden_tooltip = {
+			event_target:raid_leader = {character_event = { id = Plus.3517 days = 1 }}
+		}
+	}
+}
+# Fight event (from target)
+# Sender: Target
+# Receiver: Raider
+character_event = {
+	id = Plus.3517
+	desc = EVTDESC_Plus_3517
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Get outcome
+	#Finish raid and return home
+	option = {
+		name = EVTOPTA_Plus_3517
+		custom_tooltip = { text = EVTOPTA_Plus_3517_tooltip }
+		hidden_tooltip = {
+			FROM = {character_event = { id = Plus.3518 days = 2 }}
+			character_event = { id = Plus.3519 days = 1 }
+			FROM = {character_event = { id = Plus.3513 days = 2 }}
+		}
+	}
+}
+
+# battle outcome, inform target
+# Sender: Raider
+# Receiver: Target
+character_event = {
+	id = Plus.3518
+	desc = EVTDESC_Plus_3518
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Get outcome
+	#Finnish raid and return home
+	option = {
+		name = OK
+	}
+}
+
+# battle outcome, inform target
+# Sender: Raider
+# Receiver: Raider
+character_event = {
+	id = Plus.3519
+	desc = EVTDESC_Plus_3519
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	#Get outcome
+	#Finnish raid and return home
+	option = {
+		name = OK
+	}
+}
+
+# Let's decide where are we going
+# Sender: Raider
+# Receiver: Raider
+character_event = {
+	id = Plus.3520
+	desc = EVTDESC_Plus_3520
+	picture = GFX_evt_viking_throneroom_oldgods
+	
+	is_triggered_only = yes
+	
+	#We will go beyond the mountains
+	option = {
+		name = EVTOPTA_Plus_3520
+		custom_tooltip = { text = EVTOPTA_Plus_3520_tooltip }
+		hidden_tooltip = {
+		}
+	}
+
+	#Along the shore (up the river?)
+	option = {
+		name = EVTOPTB_Plus_3520
+		custom_tooltip = { text = EVTOPTB_Plus_3520_tooltip }
+		hidden_tooltip = {
+		}
+	}
+
+	#Across the plains
+	option = {
+		name = EVTOPTC_Plus_3520
+		trigger = {
+			NOT = { religion = FROM }
+		}
+		custom_tooltip = { text = EVTOPTC_Plus_3520_tooltip }
+		hidden_tooltip = {
+		}
+	}
+}

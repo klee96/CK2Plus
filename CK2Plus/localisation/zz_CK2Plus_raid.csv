@@ -1,0 +1,85 @@
+#CODE;ENGLISH;;;;;;;;;;;;;x
+prepare_raid;Prepare Raid;;;;;;;;;;;;;x
+prepare_raid_desc;Begin preparation for a raid.;;;;;;;;;;;;;x
+EVTDESC_Plus_3500;It is time to make a decision about the upcoming raid.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3500;Raid preparation begins.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3500;We will go across the sea!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3500_tooltip;You will prepare boats, and go across the sea into the unknown. Select target by right clicking the desired target county title.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3500;Neighbouring realms look rich enough!;;;;;;;;;;;;;x
+EVTOPTB_Plus_3500_tooltip;You will go pillaging a random settlement.;;;;;;;;;;;;;x
+select_for_raid;Select for Raid;;;;;;;;;;;;;x
+select_for_raid_desc;This county will be the target for your raid.;;;;;;;;;;;;;x
+EVTDESC_Plus_3501;I need to decide how big the raid should be.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3501;Moderation is the key!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3501_tooltip;You take half of your men and boats. The rest should stay home and protect the realm.;;;;;;;;;;;;;x
+EVTDESC_PLUS_3502;Strange ships were spoted near the coast. They could be raiders...;;;;;;;;;;;;;x
+EVTOPTA_Plus_3502;We must prepare our defences!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3502_tooltip;You send scouts to the coast, to monitor the invaders.;;;;;;;;;;;;;x
+EVTDESC_Plus_3503;We are nearing our target. They've probably spotted us already. It's not goint to help them much.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3503;Countryside is an easy target.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3503_tooltip;You begin pillaging countryside.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3503;That city looks rich.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3503_tooltip;You try to pillage the city.;;;;;;;;;;;;;x
+EVTOPTC_Plus_3503;I never liked these infidels.;;;;;;;;;;;;;x
+EVTOPTC_Plus_3503_tooltip;You try to pillage the temple.;;;;;;;;;;;;;x
+EVTOPTD_Plus_3503;All or nothing!;;;;;;;;;;;;;x
+EVTOPTD_Plus_3503_tooltip;You attack their capital holding.;;;;;;;;;;;;;x
+EVTDESC_Plus_3504;I can't belive this. My scouts report that raiders are attacking defenseless peasants!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3504;I must send troops immediately!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3504_tooltip;Your troops go after the raiders.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3504;Oh, well... it's only peasants.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3504_tooltip;You do nothing.;;;;;;;;;;;;;x
+EVTDESC_Plus_3505;A messenger has arrived from our city holding. It appears the raiders are preparing an attack.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3505;I must send troops immediately!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3505_tooltip;Your troops go after the raiders.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3505;They have walls, don't they?;;;;;;;;;;;;;x
+EVTOPTB_Plus_3505_tooltip;You do nothing.;;;;;;;;;;;;;x
+EVTDESC_Plus_3506;Cursed infidels are attacking our religion!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3506;We must defend the temple, at all cost!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3506_tooltip;Your troops go after the raiders.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3506;Who cares about a few priests?;;;;;;;;;;;;;x
+EVTOPTB_Plus_3506_tooltip;You do nothing.;;;;;;;;;;;;;x
+EVTDESC_Plus_3507;Those raiders are brave, I'll give them that. They're attacking our main holding!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3507;We must fight!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3507_tooltip;You prepare for battle.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3507;I need to get out of here!;;;;;;;;;;;;;x
+EVTOPTB_Plus_3507_tooltip;You run and hide.;;;;;;;;;;;;;x
+EVTDESC_Plus_3508;The enemy has spotted us, they're sending reinforcemnts!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3508;There's too many of them!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3508_tooltip;You pillage quickly and run to your boats.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3508;Doesn't matter.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3508_tooltip;You prepare for battle.;;;;;;;;;;;;;x
+EVTDESC_Plus_3509;The enemy should have spotted us already, I guess they don't care.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3509;Pillage everything!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3509_tooltip;You completely pillage your target.;;;;;;;;;;;;;x
+EVTDESC_Plus_3510;Their weak leader ran, and their morale is low. This was a very good idea!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3510;Attack!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3510_tooltip;You attack and pillage enemy holding.;;;;;;;;;;;;;x
+EVTDESC_Plus_3512;You took all you can carry and you got just in time to your boats, with enemy arrows right behind you.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3512;I'll take it!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3512_tooltip;Board the boats.;;;;;;;;;;;;;x
+EVTDESC_Plus_3513;The raiders got back to their boats. They didn't take much, and hopefully they will leave you alone in the future.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3513;I'm glad it's over!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3513_tooltip;The raiders leave.;;;;;;;;;;;;;x
+EVTDESC_Plus_3514;The raid is over. You board the boats, and leave. This was a great adventure!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3514;I should do this more often!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3514_tooltip;You sail home.;;;;;;;;;;;;;x
+EVTDESC_Plus_3515;You arrive home, and everyone is happy to see you. Or are they happy to see the loot you've brought?;;;;;;;;;;;;;x
+EVTOPTA_Plus_3515;Good to be home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3516;Time to face the raiders!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3516;Attack!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3516_tooltip;Battle begins!;;;;;;;;;;;;;x
+EVTDESC_Plus_3517;Time to face the enemy!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3517;Attack!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3517_tooltip;Battle begins!;;;;;;;;;;;;;x
+EVTDESC_Plus_3518;The raiders took loses, but they've managed to escape.;;;;;;;;;;;;;x
+EVTDESC_Plus_3519;We took some loses, but we got away from the battle and head to the boats.;;;;;;;;;;;;;x
+EVTDESC_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+EVTOPTA_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+EVTOPTA_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
+EVTOPTB_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+EVTOPTB_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
+EVTOPTC_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+EVTOPTC_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
+EVTOPTD_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+EVTOPTD_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x

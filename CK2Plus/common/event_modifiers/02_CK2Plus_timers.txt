@@ -251,3 +251,7 @@ shattered_realm_mod = {
 shattered_realm_cb_timer = {
 	icon = 1
 }
+
+raid_cooldown = {
+	icon = 1
+}

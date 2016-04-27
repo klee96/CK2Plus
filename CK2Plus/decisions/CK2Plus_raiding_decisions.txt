@@ -1,0 +1,89 @@
+decisions = {
+	#regular raid
+	prepare_raid = {
+		potential = {
+			#Conditions for the decision to appear
+			# we may want to change this with a list of specific cultures or a scripted trigger.
+			is_allowed_to_loot = yes
+			war = no
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { trait = infirm }
+			higher_tier_than = BARON
+			OR = {
+				has_character_flag = preparing_raid
+				has_character_flag = selecting_raid_target
+				has_character_modifier = gone_raiding
+				NOT = { has_character_modifier = raid_cooldown }
+			}
+		}
+		allow = {
+			#Conditions for the decision to be enabled
+			prestige = 100
+			wealth = 10
+			month = 2
+			NOT = { month = 9}
+		}
+		effect = {
+			# Commands executed when taking the decision
+			# Raid preparation event
+			hidden_tooltip = {
+				set_character_flag = preparing_raid
+			}
+			#Select raid level event
+			character_event = { id = Plus.3500 tooltip = EVTTOOLTIP_Plus_3500 }
+		}
+		revoke_allowed = {
+			always = no #Not used in vanilla
+		}
+		ai_will_do = {
+			#Not yet
+			factor = 0
+		}
+	}
+}
+
+title_decisions = {
+	#FROM is the decision taker
+	#ROOT is the targetted title
+	select_for_raid = { # Flag only the county capital
+        filter = all #To hell with your CPU!
+		ai_target_filter  = capital
+       
+        from_potential = {
+            ai = no #This is temporary, because reasons
+			has_character_flag = selecting_raid_target
+        }
+        potential = {
+			real_tier = COUNT
+			#check if in same seazone for normal raid OR realm capital for "large" raid
+			#Should be coastal
+        }
+        allow = {
+            always = yes
+        }
+        effect = {
+			hidden_tooltip = {
+				location = {
+					set_province_flag = raid_target
+				}
+				FROM = {
+					clr_character_flag = selecting_raid_target
+					add_character_modifier = {
+						modifier  = gone_raiding
+					}
+				}
+			}
+			save_event_target_as = raid_county
+			FROM = { character_event = { id = Plus.3501 days = 1 } }
+        }
+        revoke_allowed = {
+            always = no
+        }
+        ai_will_do = {
+            factor = 0
+			#they should, but there should also be a way for them to find good targets.
+			#sea zone stuff could be usefull here.
+        }
+    }
+}
