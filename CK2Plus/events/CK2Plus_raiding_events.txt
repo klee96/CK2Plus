@@ -535,8 +535,6 @@ character_event = {
 }
 
 # Let's decide where are we going
-# Sender: Raider
-# Receiver: Raider
 character_event = {
 	id = Plus.3520
 	desc = EVTDESC_Plus_3520
@@ -549,25 +547,155 @@ character_event = {
 		name = EVTOPTA_Plus_3520
 		custom_tooltip = { text = EVTOPTA_Plus_3520_tooltip }
 		hidden_tooltip = {
+			random_list = {
+				20 = {
+					#You run into a large village
+					character_event = { id = Plus.3521 days = 15 random = 5 }
+				}
+				20 = {
+					#You run into a troop camp
+					character_Event = { id = Plus.3522 days = 15 random = 5 }
+				}
+				20 = {
+					#You run into a merchant caravan
+					character_Event = { id = Plus.3523 days = 15 random = 5 }
+				}
+			}
 		}
 	}
 
 	#Along the shore (up the river?)
 	option = {
 		name = EVTOPTB_Plus_3520
+		trigger = { port = yes }
 		custom_tooltip = { text = EVTOPTB_Plus_3520_tooltip }
 		hidden_tooltip = {
+			random_list = {
+				40 = {
+					#You run into a large village
+					character_event = { id = Plus.3521 days = 15 random = 5 }
+				}
+				20 = {
+					#You run into a port
+					character_Event = { id = Plus.3524 days = 15 random = 5 }
+				}
+				5 = {
+					#Storm forces you to shore, you move inland
+					character_Event = { id = Plus.3525 days = 15 random = 5 }
+				}
+			}
 		}
 	}
+}
 
-	#Across the plains
+# Ran into a village
+# TODO: Add a bunch of modifiers to random lists in options
+character_event = {
+	id = Plus.3521
+	desc = EVTDESC_Plus_3521
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Attack now
+	# Defenders will not be prepared, but they will respond quickly. High chance of success, but moderate income.
 	option = {
-		name = EVTOPTC_Plus_3520
-		trigger = {
-			NOT = { religion = FROM }
+		name = EVTOPTA_PLUS_3521
+		random_list =  {
+			#Day attack is successful
+			90 = { character_event = { id = Plus.3530 days = 1 tooltip = EVTTOOLTIP_Plus_3530 } }
+			#Your attack is repelled
+			10 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
 		}
-		custom_tooltip = { text = EVTOPTC_Plus_3520_tooltip }
-		hidden_tooltip = {
+	}
+	# Wait for nightfall
+	# No defenders, unless you're discovered. Either high yield, or low yield with high loses (will give negative province modifier and prevent raid next year).
+	# Also, in worst case scenarion raiding character get's killed.
+	option = {
+		name = EVTOPTB_PLUS_3521 {
+		random_list =  {
+			#Night attack is successful
+			70 = { character_event = { id = Plus.3532 days = 1 tooltip = EVTTOOLTIP_Plus_3532 } }
+			#Your attack is repelled
+			15 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
+			#You're discovered and take heavy losses
+			15 = { character_event = { id = Plus.3533 days = 1 tooltip = EVTTOOLTIP_Plus_3533 } }
 		}
+	}
+}
+
+#Day attack is successful
+character_event = {
+	id = Plus.3530
+	desc = EVTDESC_Plus_3530
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, now go home
+	option = {
+		name = EVTOPTA_PLUS_3530
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+	}
+}
+
+#Attack is repelled
+character_event = {
+	id = Plus.3531
+	desc = EVTDESC_Plus_3531
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Oh noes, go home
+	option = {
+		name = EVTOPTA_PLUS_3531
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550s }
+	}
+}
+
+#Night attack is successful
+character_event = {
+	id = Plus.3532
+	desc = EVTDESC_Plus_3532
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, let's go home
+	option = {
+		name = EVTOPTA_PLUS_3532
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+	}
+}
+
+#Night attack is successful
+character_event = {
+	id = Plus.3533
+	desc = EVTDESC_Plus_3533
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Run for your lives!!!
+	option = {
+		name = EVTOPTA_PLUS_3533
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+	}
+}
+
+#End of level 1 raid.
+character_event = {
+	id = Plus.3550
+	desc = EVTDESC_Plus_3550
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Until next year.
+	option = {
+		name = EVTOPTA_PLUS_3550
+		remove_character_modifier = gone_raiding
+		add_character_modifier = { name = raid_cooldown duration = 270 }
 	}
 }

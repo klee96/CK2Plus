@@ -1,6 +1,6 @@
 decisions = {
-	#regular raid
 	prepare_raid = {
+		is_high_prio = yes
 		potential = {
 			#Conditions for the decision to appear
 			# we may want to change this with a list of specific cultures or a scripted trigger.
@@ -11,18 +11,17 @@ decisions = {
 			NOT = { trait = infirm }
 			higher_tier_than = BARON
 			OR = {
-				has_character_flag = preparing_raid
-				has_character_flag = selecting_raid_target
-				has_character_modifier = gone_raiding
+				NOT = { has_character_flag = preparing_raid }
+				NOT = { has_character_flag = selecting_raid_target }
+				NOT = { has_character_modifier = gone_raiding }
 				NOT = { has_character_modifier = raid_cooldown }
 			}
 		}
 		allow = {
 			#Conditions for the decision to be enabled
 			prestige = 100
-			wealth = 10
 			month = 2
-			NOT = { month = 9}
+			NOT = { month = 8}
 		}
 		effect = {
 			# Commands executed when taking the decision

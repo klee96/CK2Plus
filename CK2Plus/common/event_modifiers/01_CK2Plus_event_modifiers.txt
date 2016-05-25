@@ -1073,8 +1073,11 @@ zoroastrian_tolerance = {
 
 gone_raiding = {
 	icon = 1
-	global_tax_modifier = -0.1
-	global_revolt_risk = 0.05
+	global_tax_modifier = -0.2
+	local_revolt_risk = 0.05
 	monthly_character_piety = 0.2
 	monthly_character_prestige = 0.2
+	levy_size = -0.5
+	plot_discovery_chance = -0.25
+	fertility = -1.0
 }

@@ -1,3 +1,4 @@
+#Other localisations will default to English.
 #CODE;ENGLISH;;;;;;;;;;;;;x
 prepare_raid;Prepare Raid;;;;;;;;;;;;;x
 prepare_raid_desc;Begin preparation for a raid.;;;;;;;;;;;;;x
@@ -74,12 +75,13 @@ EVTOPTA_Plus_3517;Attack!;;;;;;;;;;;;;x
 EVTOPTA_Plus_3517_tooltip;Battle begins!;;;;;;;;;;;;;x
 EVTDESC_Plus_3518;The raiders took loses, but they've managed to escape.;;;;;;;;;;;;;x
 EVTDESC_Plus_3519;We took some loses, but we got away from the battle and head to the boats.;;;;;;;;;;;;;x
-EVTDESC_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-EVTOPTA_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-EVTOPTA_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
-EVTOPTB_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-EVTOPTB_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
-EVTOPTC_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-EVTOPTC_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
-EVTOPTD_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-EVTOPTD_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
+EVTDESC_Plus_3520;Time to select the target.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3520;Follow the mountains!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3520_tooltip;You and your warriors will follow the mountains until you reach a sizeable settlement.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3520;Go along the shore on our mighty boats!;;;;;;;;;;;;;x
+EVTOPTB_Plus_3520_tooltip;You take your fleet along the shore until you find a good target.;;;;;;;;;;;;;x
+#EVTOPTC_Plus_3520;March across the plains!;;;;;;;;;;;;;x
+#EVTOPTC_Plus_3520_tooltip;You will march across the plains in an atempt to find something worth looting.;;;;;;;;;;;;;x
+#EVTOPTD_Plus_3520;ENGLISH;;;;;;;;;;;;;x
+#EVTOPTD_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
+EVTDESC_Plus_3521;After a few days of travel, your scouts report a large village in the distance. You should decide whether you'll attack now, or wait for the cover of darkness.;;;;;;;;;;;;;x
