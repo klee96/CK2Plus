@@ -1,0 +1,83 @@
+# Converted to Shia Islam - choose branch
+character_event = {
+	id = Plus.1969
+	desc = Plus.1969
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_RoI_110
+		add_trait = Zaidiyyah_shiite
+	}
+
+	option = {
+		name = EVTOPTB_RoI_110
+		add_trait = Isma'ilism_shiite
+	}
+
+	option = {
+		name = EVTOPTC_RoI_110
+		add_trait = Imamiyyah_shiite
+	}
+
+	
+}
+
+# Converted within Shia Islam - choose branch
+character_event = {
+	id = Plus.1970
+	desc = Plus.1970
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_RoI_110
+		trigger = {
+			NOT = { trait = Zaidiyyah_shiite }
+		}
+		add_trait = Zaidiyyah_shiite
+		if = {
+			limit = { ai = no }
+			chronicle = {
+				entry = CHRONICLE_CHANGE_HINDU_BRANCH_TO_SHAIVIST
+				picture = GFX_evt_bishop_hindu
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_RoI_110
+		trigger = {
+			NOT = { trait = Isma'ilism_shiite }
+		}
+		add_trait = Isma'ilism_shiite
+		if = {
+			limit = { ai = no }
+			chronicle = {
+				entry = CHRONICLE_CHANGE_HINDU_BRANCH_TO_VAISHNAVIST
+				picture = GFX_evt_bishop_hindu
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_RoI_110
+		trigger = {
+			NOT = { trait = Imamiyyah_shiite }
+		}
+		add_trait = Imamiyyah_shiite
+		if = {
+			limit = { ai = no }
+			chronicle = {
+				entry = CHRONICLE_CHANGE_HINDU_BRANCH_TO_SHAKTIST
+				picture = GFX_evt_bishop_hindu
+			}
+		}
+	}
+
+
+}

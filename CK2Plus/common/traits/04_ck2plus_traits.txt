@@ -1721,3 +1721,58 @@ imperial_guard = {
 	same_opinion = 10
 	ai_ambition = 10
 }
+
+Isma'ilism_shiite = {
+	opposites = {
+		Zaidiyyah_shiite
+		Imamiyyah_shiite
+	
+        }
+
+	opposite_opinion = -5
+	
+	vassal_opinion = 5
+
+	potential = { religion = shiite }
+	religious_branch = shiite
+	random = no
+	religious = yes
+	customizer = yes
+        ruler_designer_cost = 0
+}
+
+Zaidiyyah_shiite= {
+	opposites = {
+		Imamiyyah_shiite
+		Isma'ilism_shiite
+	}
+
+	opposite_opinion = -5
+	
+	fertility = 0.2
+
+	potential = { religion = shiite }
+	religious_branch = shiite
+	random = no
+	customizer = yes
+        religious = yes
+	ruler_designer_cost = 0
+}
+
+Imamiyyah_shiite = {
+	opposites = {
+		Isma'ilism_shiite
+		Zaidiyyah_shiite
+	}
+
+	opposite_opinion = -5
+	
+	monthly_character_piety = 0.5
+
+	potential = { religion = shiite }
+	religious_branch = shiite
+	random = no
+	customizer = yes
+        religious = yes
+	ruler_designer_cost = 0
+}
