@@ -53,9 +53,21 @@ character_event = {
 	#We will go across the sea!
 	option = {
 		name = EVTOPTA_Plus_3500
+		trigger = { 
+			always = no #TEMP
+			capital_scope = {
+				port = yes
+			}
+		}
 		custom_tooltip = { text = EVTOPTA_Plus_3500_tooltip }
 		hidden_tooltip = {
 			set_character_flag = selecting_raid_target
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
 		}
 	}
 	
@@ -69,6 +81,27 @@ character_event = {
 			}
 		}
 		character_event = { id = Plus.3520 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = craven
+					trait = patient
+				}
+			}
+			modifier = {
+				factor = 0.2
+				trait = wroth
+			}
+			modifier = {
+				factor = 0
+				trait = viking
+			}
+		}
 	}
 }
 
@@ -548,18 +581,24 @@ character_event = {
 		custom_tooltip = { text = EVTOPTA_Plus_3520_tooltip }
 		hidden_tooltip = {
 			random_list = {
-				20 = {
+				50 = {
 					#You run into a large village
 					character_event = { id = Plus.3521 days = 15 random = 5 }
 				}
-				20 = {
+				10 = {
 					#You run into a troop camp
 					character_Event = { id = Plus.3522 days = 15 random = 5 }
 				}
-				20 = {
+				30 = {
 					#You run into a merchant caravan
 					character_Event = { id = Plus.3523 days = 15 random = 5 }
 				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
 			}
 		}
 	}
@@ -571,18 +610,24 @@ character_event = {
 		custom_tooltip = { text = EVTOPTB_Plus_3520_tooltip }
 		hidden_tooltip = {
 			random_list = {
-				40 = {
+				50 = {
 					#You run into a large village
 					character_event = { id = Plus.3521 days = 15 random = 5 }
 				}
-				20 = {
+				30 = {
 					#You run into a port
 					character_Event = { id = Plus.3524 days = 15 random = 5 }
 				}
 				5 = {
-					#Storm forces you to shore, you move inland
+					#Storm forces you to shore
 					character_Event = { id = Plus.3525 days = 15 random = 5 }
 				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
 			}
 		}
 	}
@@ -607,6 +652,12 @@ character_event = {
 			#Your attack is repelled
 			10 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
 		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.8
+			}
+		}
 	}
 	# Wait for nightfall
 	# No defenders, unless you're discovered. Either high yield, or low yield with high loses (will give negative province modifier and prevent raid next year).
@@ -620,6 +671,82 @@ character_event = {
 			15 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
 			#You're discovered and take heavy losses
 			15 = { character_event = { id = Plus.3533 days = 1 tooltip = EVTTOOLTIP_Plus_3533 } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+			}
+			modifier = {
+				factor = 2
+				intrigue = 10
+			}
+			modifier = {
+				factor = 2
+				intrigue = 14
+			}
+			modifier = {
+				factor = 2
+				intrigue = 18
+			}
+		}
+	}
+}
+
+# Ran into troop camp
+# TODO: Add a bunch of modifiers to random lists in options
+character_event = {
+	id = Plus.3522
+	desc = EVTDESC_Plus_3522
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Attack now
+	# Defenders will not be prepared.
+	option = {
+		name = EVTOPTA_PLUS_3521
+		random_list =  {
+			#Day attack is successful
+			75 = { character_event = { id = Plus.3530 days = 1 tooltip = EVTTOOLTIP_Plus_3534 } }
+			#Your attack is repelled
+			25 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.8
+			}
+		}
+	}
+	# Wait for nightfall
+	option = {
+		name = EVTOPTB_PLUS_3521 {
+		random_list =  {
+			#Night attack is successful
+			60 = { character_event = { id = Plus.3532 days = 1 tooltip = EVTTOOLTIP_Plus_3536 } }
+			#Your attack is repelled
+			20 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
+			#You're discovered and take heavy losses
+			20 = { character_event = { id = Plus.3533 days = 1 tooltip = EVTTOOLTIP_Plus_3537 } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+			}
+			modifier = {
+				factor = 2
+				intrigue = 10
+			}
+			modifier = {
+				factor = 2
+				intrigue = 14
+			}
+			modifier = {
+				factor = 2
+				intrigue = 18
+			}
 		}
 	}
 }
@@ -635,7 +762,7 @@ character_event = {
 	# Glorious, now go home
 	option = {
 		name = EVTOPTA_PLUS_3530
-		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
 
@@ -650,7 +777,7 @@ character_event = {
 	# Oh noes, go home
 	option = {
 		name = EVTOPTA_PLUS_3531
-		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550s }
+		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
 
@@ -665,11 +792,11 @@ character_event = {
 	# Glorious, let's go home
 	option = {
 		name = EVTOPTA_PLUS_3532
-		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
 
-#Night attack is successful
+#Night attack is discovered
 character_event = {
 	id = Plus.3533
 	desc = EVTDESC_Plus_3533

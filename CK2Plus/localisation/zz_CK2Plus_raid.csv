@@ -85,3 +85,27 @@ EVTOPTB_Plus_3520_tooltip;You take your fleet along the shore until you find a g
 #EVTOPTD_Plus_3520;ENGLISH;;;;;;;;;;;;;x
 #EVTOPTD_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
 EVTDESC_Plus_3521;After a few days of travel, your scouts report a large village in the distance. You should decide whether you'll attack now, or wait for the cover of darkness.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3521;Attack now!;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3530;Your attack is successful. You receive moderate income.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3531;Your attack is repelled.;;;;;;;;;;;;;x
+EVTOPTB_PLUS_3521;Wait for nightfall...;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3532;Your attack is successful. You receive high income.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3533;You're discovered and take heavy losses.;;;;;;;;;;;;;x
+EVTDESC_Plus_3530;The enemy is completely taken by surprise, and you overcome their defenses easily.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3530;Time to go home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3531;You underestimated the enemy! They took arms quickly and repelled your attack.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3531;Run for your lives!;;;;;;;;;;;;;x
+EVTDESC_Plus_3532;You enter the enemy encampment while everyone is asleep. They stood no chance to your might.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3532;Make sure you take everything before we leave home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3533;While waiting for nightfall, a rain of arrows comes your way. You've been discovered by the enemy and they managed to sneak up on you!;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3533;Run for your lives!;;;;;;;;;;;;;x
+EVTDESC_Plus_3550;After a long journey, you return home. The raid is over!;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3550;Until next year.;;;;;;;;;;;;;x
+EVTDESC_Plus_3522;After a few days of travel, your scouts report an enemy troop camp, only a day away. Their camp seems to have a lot of supplies and weapons.;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x

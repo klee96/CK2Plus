@@ -30,14 +30,17 @@ decisions = {
 				set_character_flag = preparing_raid
 			}
 			#Select raid level event
-			character_event = { id = Plus.3500 tooltip = EVTTOOLTIP_Plus_3500 }
+			character_event = { id = Plus.3500 days = 5 random = 3 tooltip = EVTTOOLTIP_Plus_3500 }
 		}
 		revoke_allowed = {
 			always = no #Not used in vanilla
 		}
 		ai_will_do = {
-			#Not yet
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0.2
+				trait = craven
+			}
 		}
 	}
 }
