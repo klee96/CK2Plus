@@ -581,16 +581,16 @@ character_event = {
 		custom_tooltip = { text = EVTOPTA_Plus_3520_tooltip }
 		hidden_tooltip = {
 			random_list = {
-				50 = {
+				75 = {
 					#You run into a large village
 					character_event = { id = Plus.3521 days = 15 random = 5 }
 				}
-				10 = {
-					#You run into a troop camp
+				20 = {
+					#You run into a merchant caravan camp
 					character_Event = { id = Plus.3522 days = 15 random = 5 }
 				}
-				30 = {
-					#You run into a merchant caravan
+				5 = {
+					#You walk into an enemy ambush and take heavy loses.
 					character_Event = { id = Plus.3523 days = 15 random = 5 }
 				}
 			}
@@ -610,7 +610,7 @@ character_event = {
 		custom_tooltip = { text = EVTOPTB_Plus_3520_tooltip }
 		hidden_tooltip = {
 			random_list = {
-				50 = {
+				65 = {
 					#You run into a large village
 					character_event = { id = Plus.3521 days = 15 random = 5 }
 				}
@@ -619,7 +619,7 @@ character_event = {
 					character_Event = { id = Plus.3524 days = 15 random = 5 }
 				}
 				5 = {
-					#Storm forces you to shore
+					#Storm forces you to shore. You lose boats and warriors
 					character_Event = { id = Plus.3525 days = 15 random = 5 }
 				}
 			}
@@ -693,7 +693,7 @@ character_event = {
 	}
 }
 
-# Ran into troop camp
+# Ran into a merchant caravan camp
 # TODO: Add a bunch of modifiers to random lists in options
 character_event = {
 	id = Plus.3522
@@ -703,14 +703,14 @@ character_event = {
 	is_triggered_only = yes
 	
 	# Attack now
-	# Defenders will not be prepared.
+	# Defenders will not be prepared, but they will respond quickly. High chance of success, but moderate income.
 	option = {
-		name = EVTOPTA_PLUS_3521
+		name = EVTOPTA_PLUS_3522
 		random_list =  {
 			#Day attack is successful
-			75 = { character_event = { id = Plus.3530 days = 1 tooltip = EVTTOOLTIP_Plus_3534 } }
+			90 = { character_event = { id = Plus.3534 days = 1 tooltip = EVTTOOLTIP_Plus_3534 } }
 			#Your attack is repelled
-			25 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
+			10 = { character_event = { id = Plus.3535 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
 		}
 		ai_chance = {
 			factor = 1
@@ -720,15 +720,17 @@ character_event = {
 		}
 	}
 	# Wait for nightfall
+	# No defenders, unless you're discovered. Either high yield, or low yield with high loses (will give negative province modifier and prevent raid next year).
+	# Also, in worst case scenarion raiding character get's killed.
 	option = {
-		name = EVTOPTB_PLUS_3521 {
+		name = EVTOPTB_PLUS_3522 {
 		random_list =  {
 			#Night attack is successful
-			60 = { character_event = { id = Plus.3532 days = 1 tooltip = EVTTOOLTIP_Plus_3536 } }
+			70 = { character_event = { id = Plus.3536 days = 1 tooltip = EVTTOOLTIP_Plus_3536 } }
 			#Your attack is repelled
-			20 = { character_event = { id = Plus.3531 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
+			15 = { character_event = { id = Plus.3535 days = 1 tooltip = EVTTOOLTIP_Plus_3535 } }
 			#You're discovered and take heavy losses
-			20 = { character_event = { id = Plus.3533 days = 1 tooltip = EVTTOOLTIP_Plus_3537 } }
+			15 = { character_event = { id = Plus.3537 days = 1 tooltip = EVTTOOLTIP_Plus_3537 } }
 		}
 		ai_chance = {
 			factor = 1
@@ -751,7 +753,7 @@ character_event = {
 	}
 }
 
-#Day attack is successful
+#Day attack on village is successful
 character_event = {
 	id = Plus.3530
 	desc = EVTDESC_Plus_3530
@@ -766,7 +768,7 @@ character_event = {
 	}
 }
 
-#Attack is repelled
+#Attack on village is repelled
 character_event = {
 	id = Plus.3531
 	desc = EVTDESC_Plus_3531
@@ -781,7 +783,7 @@ character_event = {
 	}
 }
 
-#Night attack is successful
+#Night attack on village is successful
 character_event = {
 	id = Plus.3532
 	desc = EVTDESC_Plus_3532
@@ -796,7 +798,7 @@ character_event = {
 	}
 }
 
-#Night attack is discovered
+#Night attack on village is discovered
 character_event = {
 	id = Plus.3533
 	desc = EVTDESC_Plus_3533
