@@ -80,10 +80,6 @@ EVTOPTA_Plus_3520;Follow the mountains!;;;;;;;;;;;;;x
 EVTOPTA_Plus_3520_tooltip;You and your warriors will follow the mountains until you reach a sizeable settlement.;;;;;;;;;;;;;x
 EVTOPTB_Plus_3520;Go along the shore on our mighty boats!;;;;;;;;;;;;;x
 EVTOPTB_Plus_3520_tooltip;You take your fleet along the shore until you find a good target.;;;;;;;;;;;;;x
-#EVTOPTC_Plus_3520;March across the plains!;;;;;;;;;;;;;x
-#EVTOPTC_Plus_3520_tooltip;You will march across the plains in an atempt to find something worth looting.;;;;;;;;;;;;;x
-#EVTOPTD_Plus_3520;ENGLISH;;;;;;;;;;;;;x
-#EVTOPTD_Plus_3520_tooltip;ENGLISH;;;;;;;;;;;;;x
 EVTDESC_Plus_3521;After a few days of travel, your scouts report a large village in the distance. You should decide whether you'll attack now, or wait for the cover of darkness.;;;;;;;;;;;;;x
 EVTOPTA_PLUS_3521;Attack now!;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3530;Your attack is successful. You receive moderate income.;;;;;;;;;;;;;x
@@ -96,7 +92,7 @@ EVTOPTA_PLUS_3530;Time to go home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3531;You underestimated the villagers! They took arms quickly and repelled your attack.;;;;;;;;;;;;;x
 EVTOPTA_PLUS_3531;Run for your lives!;;;;;;;;;;;;;x
 EVTDESC_Plus_3532;You enter the village while everyone is asleep. They stood no chance to your might.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3532;Make sure you take everything before we leave home!;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3532;Make sure you take everything before returning home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3533;While waiting for nightfall, a rain of arrows comes your way. You've been discovered!;;;;;;;;;;;;;x
 EVTOPTA_PLUS_3533;Run for your lives!;;;;;;;;;;;;;x
 EVTDESC_Plus_3550;After a long journey, you return home. The raid is over!;;;;;;;;;;;;;x
@@ -106,6 +102,18 @@ EVTTOOLTIP_Plus_3534;Your attack is successful. You receive moderate income.;;;;
 EVTTOOLTIP_Plus_3535;Your attack is repelled.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3536;Your attack is successful. You receive high income.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3537;You're discovered and take heavy losses.;;;;;;;;;;;;;x
+EVTDESC_Plus_3534;The merchants are completely taken by surprise, and you overcome their defenses easily.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3534;Time to go home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3535;You underestimated the merchants! They took arms quickly and repelled your attack.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3535;Run for your lives!;;;;;;;;;;;;;x
+EVTDESC_Plus_3536;You enter the camp while everyone is asleep. The merchants stood no chance against you.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3536;Make sure you take everything before returning home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3537;While waiting for nightfall, a rain of arrows comes your way. You've been discovered!;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3537;Run for your lives!;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
+#;ENGLISH;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x

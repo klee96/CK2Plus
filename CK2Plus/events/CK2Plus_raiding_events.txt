@@ -587,11 +587,11 @@ character_event = {
 				}
 				20 = {
 					#You run into a merchant caravan camp
-					character_Event = { id = Plus.3522 days = 15 random = 5 }
+					character_event = { id = Plus.3522 days = 15 random = 5 }
 				}
 				5 = {
 					#You walk into an enemy ambush and take heavy loses.
-					character_Event = { id = Plus.3523 days = 15 random = 5 }
+					character_event = { id = Plus.3523 days = 15 random = 5 }
 				}
 			}
 		}
@@ -616,11 +616,11 @@ character_event = {
 				}
 				30 = {
 					#You run into a port
-					character_Event = { id = Plus.3524 days = 15 random = 5 }
+					character_event = { id = Plus.3524 days = 15 random = 5 }
 				}
 				5 = {
 					#Storm forces you to shore. You lose boats and warriors
-					character_Event = { id = Plus.3525 days = 15 random = 5 }
+					character_event = { id = Plus.3525 days = 15 random = 5 }
 				}
 			}
 		}
@@ -657,6 +657,10 @@ character_event = {
 			modifier = {
 				factor = 0.8
 			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
 		}
 	}
 	# Wait for nightfall
@@ -689,6 +693,10 @@ character_event = {
 				factor = 2
 				intrigue = 18
 			}
+			modifier = {
+				factor = 20
+				trait = patient
+			}
 		}
 	}
 }
@@ -716,6 +724,10 @@ character_event = {
 			factor = 1
 			modifier = {
 				factor = 0.8
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
 			}
 		}
 	}
@@ -749,7 +761,27 @@ character_event = {
 				factor = 2
 				intrigue = 18
 			}
+			modifier = {
+				factor = 20
+				trait = patient
+			}
 		}
+	}
+}
+
+# Walk into enemy ambush
+# TODO: Add a bunch of modifiers to random lists in options
+character_event = {
+	id = Plus.3523
+	desc = EVTDESC_Plus_3523
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Bad luck brian, raid is over.
+	option = {
+		name = EVTOPTA_PLUS_3523
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
 	}
 }
 
@@ -809,6 +841,66 @@ character_event = {
 	# Run for your lives!!!
 	option = {
 		name = EVTOPTA_PLUS_3533
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+	}
+}
+
+#Day attack on merchant camp is successful
+character_event = {
+	id = Plus.3534
+	desc = EVTDESC_Plus_3534
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, now go home
+	option = {
+		name = EVTOPTA_PLUS_3534
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Attack on merchant camp is repelled
+character_event = {
+	id = Plus.3535
+	desc = EVTDESC_Plus_3535
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Oh noes, go home
+	option = {
+		name = EVTOPTA_PLUS_3535
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Night attack on merchant camp is successful
+character_event = {
+	id = Plus.3536
+	desc = EVTDESC_Plus_3536
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, let's go home
+	option = {
+		name = EVTOPTA_PLUS_3536
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Night attack on merchant camp is discovered
+character_event = {
+	id = Plus.3537
+	desc = EVTDESC_Plus_3537
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Run for your lives!!!
+	option = {
+		name = EVTOPTA_PLUS_3537
 		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
 	}
 }
