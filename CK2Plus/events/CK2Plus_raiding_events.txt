@@ -768,7 +768,6 @@ character_event = {
 		}
 	}
 }
-
 # Walk into enemy ambush
 # TODO: Add a bunch of modifiers to random lists in options
 character_event = {
@@ -781,7 +780,77 @@ character_event = {
 	# Bad luck brian, raid is over.
 	option = {
 		name = EVTOPTA_PLUS_3523
-		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
+		random_list = {
+			# You manage to escape
+			50 = { character_event = { id = Plus.3538 days = 1 tooltip = EVTTOOLTIP_Plus_3538 } }
+			# Die, missing, not good
+			50 = { character_event = { id = Plus.3539 days = 1 tooltip = EVTTOOLTIP_Plus_3539 } }
+		}
+	}
+}
+
+# Ran into a port
+# TODO: Add a bunch of modifiers to random lists in options
+character_event = {
+	id = Plus.3524
+	desc = EVTDESC_Plus_3524
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Attack now immediately
+	option = {
+		name = EVTOPTA_PLUS_3524
+		random_list =  {
+			#Sea front attack is successful
+			90 = { character_event = { id = Plus.3540 days = 1 tooltip = EVTTOOLTIP_Plus_3540 } }
+			#Your attack is repelled
+			10 = { character_event = { id = Plus.3541 days = 1 tooltip = EVTTOOLTIP_Plus_3541 } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.8
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+		}
+	}
+	# Go to land, attack both from land and sea.
+	option = {
+		name = EVTOPTB_PLUS_3521 {
+		random_list =  {
+			#Land and sea attack is successful
+			70 = { character_event = { id = Plus.3542 days = 1 tooltip = EVTTOOLTIP_Plus_3532 } }
+			#Your attack is repelled
+			15 = { character_event = { id = Plus.3541 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
+			#You're discovered and take heavy losses
+			15 = { character_event = { id = Plus.3543 days = 1 tooltip = EVTTOOLTIP_Plus_3533 } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+			}
+			modifier = {
+				factor = 2
+				intrigue = 10
+			}
+			modifier = {
+				factor = 2
+				intrigue = 14
+			}
+			modifier = {
+				factor = 2
+				intrigue = 18
+			}
+			modifier = {
+				factor = 20
+				trait = patient
+			}
+		}
 	}
 }
 
@@ -905,11 +974,43 @@ character_event = {
 	}
 }
 
+#Escaped ambush
+#This should still result with levy penalty.
+character_event = {
+	id = Plus.3538
+	desc = EVTDESC_Plus_3538
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_PLUS_3538
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Didn't escape ambush
+#This should still result with levy penalty.
+character_event = {
+	id = Plus.3539
+	desc = EVTDESC_Plus_3539
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# This needs to cleanup because character will get killed here.
+	# Also apply negative modifiers from 3538
+	
+	option = {
+		name = EVTOPTA_PLUS_3539
+	}
+}
+
 #End of level 1 raid.
 character_event = {
 	id = Plus.3550
 	desc = EVTDESC_Plus_3550
-	picture = GFX_evt_viking_battle_oldgods
+	picture = GFX_evt_vikings_arriving_oldgods
 	
 	is_triggered_only = yes
 	

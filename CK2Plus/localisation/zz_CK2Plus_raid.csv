@@ -110,8 +110,14 @@ EVTDESC_Plus_3536;You enter the camp while everyone is asleep. The merchants sto
 EVTOPTA_PLUS_3536;Make sure you take everything before returning home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3537;While waiting for nightfall, a rain of arrows comes your way. You've been discovered!;;;;;;;;;;;;;x
 EVTOPTA_PLUS_3537;Run for your lives!;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
+EVTDESC_Plus_3523;It's been a long march and you decide to make camp near the forest's edge. However, as soon as the tents are up, an arrows flies you by. It is immediately followed by more arrows and the sound of war horns. It no longer matters if this ambush was setup by other raiders or just bandits, you need to get your troops and yourself out of here!;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3523;We need to get out of here!;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3538;You escape with your life.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3539;Bad things happen.;;;;;;;;;;;;;x
+EVTDESC_Plus_3538;You managed to fight your way out of this ambush. You gather what remains of your forces, and march home.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3538;Curses!;;;;;;;;;;;;;x
+EVTDESC_Plus_3539;You find yourself surrounded by enemies. All you can do now is take some of them with you.;;;;;;;;;;;;;x
+EVTOPTA_PLUS_3539;Curses!;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x
 #;ENGLISH;;;;;;;;;;;;;x
