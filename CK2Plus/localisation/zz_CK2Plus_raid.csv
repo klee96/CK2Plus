@@ -13,7 +13,7 @@ select_for_raid_desc;This county will be the target for your raid.;;;;;;;;;;;;;x
 EVTDESC_Plus_3501;I need to decide how big the raid should be.;;;;;;;;;;;;;x
 EVTOPTA_Plus_3501;Moderation is the key!;;;;;;;;;;;;;x
 EVTOPTA_Plus_3501_tooltip;You take half of your men and boats. The rest should stay home and protect the realm.;;;;;;;;;;;;;x
-EVTDESC_PLUS_3502;Strange ships were spoted near the coast. They could be raiders...;;;;;;;;;;;;;x
+EVTDESC_Plus_3502;Strange ships were spoted near the coast. They could be raiders...;;;;;;;;;;;;;x
 EVTOPTA_Plus_3502;We must prepare our defences!;;;;;;;;;;;;;x
 EVTOPTA_Plus_3502_tooltip;You send scouts to the coast, to monitor the invaders.;;;;;;;;;;;;;x
 EVTDESC_Plus_3503;We are nearing our target. They've probably spotted us already. It's not goint to help them much.;;;;;;;;;;;;;x
@@ -81,45 +81,55 @@ EVTOPTA_Plus_3520_tooltip;You and your warriors will follow the mountains until 
 EVTOPTB_Plus_3520;Go along the shore on our mighty boats!;;;;;;;;;;;;;x
 EVTOPTB_Plus_3520_tooltip;You take your fleet along the shore until you find a good target.;;;;;;;;;;;;;x
 EVTDESC_Plus_3521;After a few days of travel, your scouts report a large village in the distance. You should decide whether you'll attack now, or wait for the cover of darkness.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3521;Attack now!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3521;Attack now!;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3530;Your attack is successful. You receive moderate income.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3531;Your attack is repelled.;;;;;;;;;;;;;x
-EVTOPTB_PLUS_3521;Wait for nightfall...;;;;;;;;;;;;;x
+EVTOPTB_Plus_3521;Wait for nightfall...;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3532;Your attack is successful. You receive high income.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3533;You're discovered and take heavy losses.;;;;;;;;;;;;;x
 EVTDESC_Plus_3530;The villagers are completely taken by surprise, and you overcome their defenses easily.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3530;Time to go home!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3530;Time to go home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3531;You underestimated the villagers! They took arms quickly and repelled your attack.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3531;Run for your lives!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3531;Run for your lives!;;;;;;;;;;;;;x
 EVTDESC_Plus_3532;You enter the village while everyone is asleep. They stood no chance to your might.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3532;Make sure you take everything before returning home!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3532;Make sure you take everything before returning home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3533;While waiting for nightfall, a rain of arrows comes your way. You've been discovered!;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3533;Run for your lives!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3533;Run for your lives!;;;;;;;;;;;;;x
 EVTDESC_Plus_3550;After a long journey, you return home. The raid is over!;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3550;Until next year.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3550;Until next year.;;;;;;;;;;;;;x
 EVTDESC_Plus_3522;After a few days of travel, your receive report of a merchant caravan. They seem to have made camp near a river, and are resting their horses and gathering supplies. Ripe for attack!;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3534;Your attack is successful. You receive moderate income.;;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3535;Your attack is repelled.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3536;Your attack is successful. You receive high income.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3537;You're discovered and take heavy losses.;;;;;;;;;;;;;x
 EVTDESC_Plus_3534;The merchants are completely taken by surprise, and you overcome their defenses easily.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3534;Time to go home!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3534;Time to go home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3535;You underestimated the merchants! They took arms quickly and repelled your attack.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3535;Run for your lives!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3535;Run for your lives!;;;;;;;;;;;;;x
 EVTDESC_Plus_3536;You enter the camp while everyone is asleep. The merchants stood no chance against you.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3536;Make sure you take everything before returning home!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3536;Make sure you take everything before returning home!;;;;;;;;;;;;;x
 EVTDESC_Plus_3537;While waiting for nightfall, a rain of arrows comes your way. You've been discovered!;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3537;Run for your lives!;;;;;;;;;;;;;x
-EVTDESC_Plus_3523;It's been a long march and you decide to make camp near the forest's edge. However, as soon as the tents are up, an arrows flies you by. It is immediately followed by more arrows and the sound of war horns. It no longer matters if this ambush was setup by other raiders or just bandits, you need to get your troops and yourself out of here!;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3523;We need to get out of here!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3537;Run for your lives!;;;;;;;;;;;;;x
+EVTDESC_Plus_3523;It's been a long march and you decide to make camp near the forest's edge. However, as soon as the tents are up, an arrows flies you by. It is immediately followed by more arrows and the sound of battle horns. It no longer matters if this ambush was setup by other raiders or just bandits, you need to get your troops and yourself out of here!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3523;We need to get out of here!;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3538;You escape with your life.;;;;;;;;;;;;;x
 EVTTOOLTIP_Plus_3539;Bad things happen.;;;;;;;;;;;;;x
 EVTDESC_Plus_3538;You managed to fight your way out of this ambush. You gather what remains of your forces, and march home.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3538;Curses!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3538;Curses!;;;;;;;;;;;;;x
 EVTDESC_Plus_3539;You find yourself surrounded by enemies. All you can do now is take some of them with you.;;;;;;;;;;;;;x
-EVTOPTA_PLUS_3539;Curses!;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
-#;ENGLISH;;;;;;;;;;;;;x
+EVTOPTA_Plus_3539;Curses!;;;;;;;;;;;;;x
+EVTDESC_Plus_3524;Your scouts report of a large port up the coast. You should decide your strategy for the attack.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3524;Sail there and attack immediately!;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3540;Seafront attack is successful. You receive moderate income.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3541;Your attack is repelled.;;;;;;;;;;;;;x
+EVTOPTB_Plus_3521;Deploy some troops on the land, and then attack!;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3542;Two-front attack is successful. You receive high income.;;;;;;;;;;;;;x
+EVTTOOLTIP_Plus_3543;You're discovered and take heavy losses.;;;;;;;;;;;;;x
+EVTDESC_Plus_3540;The enemy was not prepared for an attack, and you defeat them easily.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3540;Time to go home!;;;;;;;;;;;;;x
+EVTDESC_Plus_3541;It seams the port was better protected than you estimated. Your attack was repelled, and you have to withdraw!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3541;Curses!;;;;;;;;;;;;;x
+EVTDESC_Plus_3542;The port is completely surrounded and after a few skirmishes you enter the settlement. Everything is yours for the taking!;;;;;;;;;;;;;x
+EVTOPTA_Plus_3542;Songs will be sung of this day!;;;;;;;;;;;;;x
+EVTDESC_Plus_3543;You've deployed your warriors and are preparing the attack with army leaders onboard your ship. Suddently you hear a battle horns and screams from the coast line. In a matter of minutes your troops are overwhelmed. Only a few have managed to reach the boats.;;;;;;;;;;;;;x
+EVTOPTA_Plus_3543;Curses!;;;;;;;;;;;;;x

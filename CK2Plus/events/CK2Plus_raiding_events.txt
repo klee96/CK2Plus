@@ -10,7 +10,7 @@ namespace = Plus
 # There are three types of raids.
 # All of them are accessed from Plus.3500
 #
-# EVTOPTA_PLUS_3500 is the Level 2 raid. Basically, take warriors, but them on boats,
+# EVTOPTA_Plus_3500 is the Level 2 raid. Basically, take warriors, but them on boats,
 # sail for a few weeks, pillage, then come home. This is the substitute of the vanilla,
 # oh, so poorly thought through, raiding.
 # That means it has two participants, the raider and the target.
@@ -18,14 +18,14 @@ namespace = Plus
 # Player will be able to select ANY county within allowed distance.
 # AI will be given an appropriate target.
 #
-# EVTOPTB_PLUS_3500 is the Level 1 raid. I call it the poor man's raid. No investment
+# EVTOPTB_Plus_3500 is the Level 1 raid. I call it the poor man's raid. No investment
 # is needed. It just a bunch of guys with war axes going to raid the village next
 # door. This type of raid has only one participant, the raider. The target is
 # "some settlement", 5-6 days away by foot or a boat. They get there, maybe they get
 # some cash, maybe they capture slaves, maybe they get caught and have to ransom themselves,
 # or maybe, they get killed. Anything can happen.
 #
-# EVTOPTC_PLUS_3500 is the Level 3 raid. Sometimew when a level 2 raid, takes the raider
+# EVTOPTC_Plus_3500 is the Level 3 raid. Sometimew when a level 2 raid, takes the raider
 # to a far away land, the raider will get information about other places. These special
 # locations will be sites like Paris, Rome, Alexandria, Antioch, Byzantium etc.
 # Once a raider get's information about such a location they will be able to start their 
@@ -141,7 +141,7 @@ character_event = {
 # Receiver: Target
 character_event = {
 	id = Plus.3502
-	desc = EVTDESC_PLUS_3502
+	desc = EVTDESC_Plus_3502
 	picture = GFX_evt_vikings_arriving_oldgods
 	
 	is_triggered_only = yes
@@ -567,6 +567,8 @@ character_event = {
 	}
 }
 
+############## LEVEL 1 RAID CODE ##############
+
 # Let's decide where are we going
 character_event = {
 	id = Plus.3520
@@ -638,14 +640,14 @@ character_event = {
 character_event = {
 	id = Plus.3521
 	desc = EVTDESC_Plus_3521
-	picture = GFX_evt_viking_battle_oldgods
+	picture = GFX_evt_vikings_arriving_oldgods
 	
 	is_triggered_only = yes
 	
 	# Attack now
 	# Defenders will not be prepared, but they will respond quickly. High chance of success, but moderate income.
 	option = {
-		name = EVTOPTA_PLUS_3521
+		name = EVTOPTA_Plus_3521
 		random_list =  {
 			#Day attack is successful
 			90 = { character_event = { id = Plus.3530 days = 1 tooltip = EVTTOOLTIP_Plus_3530 } }
@@ -667,7 +669,7 @@ character_event = {
 	# No defenders, unless you're discovered. Either high yield, or low yield with high loses (will give negative province modifier and prevent raid next year).
 	# Also, in worst case scenarion raiding character get's killed.
 	option = {
-		name = EVTOPTB_PLUS_3521 {
+		name = EVTOPTB_Plus_3521 {
 		random_list =  {
 			#Night attack is successful
 			70 = { character_event = { id = Plus.3532 days = 1 tooltip = EVTTOOLTIP_Plus_3532 } }
@@ -706,14 +708,14 @@ character_event = {
 character_event = {
 	id = Plus.3522
 	desc = EVTDESC_Plus_3522
-	picture = GFX_evt_viking_battle_oldgods
+	picture = GFX_evt_vikings_arriving_oldgods
 	
 	is_triggered_only = yes
 	
 	# Attack now
 	# Defenders will not be prepared, but they will respond quickly. High chance of success, but moderate income.
 	option = {
-		name = EVTOPTA_PLUS_3522
+		name = EVTOPTA_Plus_3522
 		random_list =  {
 			#Day attack is successful
 			90 = { character_event = { id = Plus.3534 days = 1 tooltip = EVTTOOLTIP_Plus_3534 } }
@@ -735,7 +737,7 @@ character_event = {
 	# No defenders, unless you're discovered. Either high yield, or low yield with high loses (will give negative province modifier and prevent raid next year).
 	# Also, in worst case scenarion raiding character get's killed.
 	option = {
-		name = EVTOPTB_PLUS_3522 {
+		name = EVTOPTB_Plus_3522 {
 		random_list =  {
 			#Night attack is successful
 			70 = { character_event = { id = Plus.3536 days = 1 tooltip = EVTTOOLTIP_Plus_3536 } }
@@ -779,7 +781,7 @@ character_event = {
 	
 	# Bad luck brian, raid is over.
 	option = {
-		name = EVTOPTA_PLUS_3523
+		name = EVTOPTA_Plus_3523
 		random_list = {
 			# You manage to escape
 			50 = { character_event = { id = Plus.3538 days = 1 tooltip = EVTTOOLTIP_Plus_3538 } }
@@ -794,13 +796,13 @@ character_event = {
 character_event = {
 	id = Plus.3524
 	desc = EVTDESC_Plus_3524
-	picture = GFX_evt_viking_battle_oldgods
+	picture = GFX_evt_vikings_arriving_oldgods
 	
 	is_triggered_only = yes
 	
 	# Attack now immediately
 	option = {
-		name = EVTOPTA_PLUS_3524
+		name = EVTOPTA_Plus_3524
 		random_list =  {
 			#Sea front attack is successful
 			90 = { character_event = { id = Plus.3540 days = 1 tooltip = EVTTOOLTIP_Plus_3540 } }
@@ -818,16 +820,16 @@ character_event = {
 			}
 		}
 	}
-	# Go to land, attack both from land and sea.
+	# Go to land, attack both from land and sea. This will yield more loot, because you've cut off evacuation routes.
 	option = {
-		name = EVTOPTB_PLUS_3521 {
+		name = EVTOPTB_Plus_3521 {
 		random_list =  {
 			#Land and sea attack is successful
-			70 = { character_event = { id = Plus.3542 days = 1 tooltip = EVTTOOLTIP_Plus_3532 } }
+			70 = { character_event = { id = Plus.3542 days = 1 tooltip = EVTTOOLTIP_Plus_3542 } }
 			#Your attack is repelled
-			15 = { character_event = { id = Plus.3541 days = 1 tooltip = EVTTOOLTIP_Plus_3531 } }
+			15 = { character_event = { id = Plus.3541 days = 1 tooltip = EVTTOOLTIP_Plus_3541 } }
 			#You're discovered and take heavy losses
-			15 = { character_event = { id = Plus.3543 days = 1 tooltip = EVTTOOLTIP_Plus_3533 } }
+			15 = { character_event = { id = Plus.3543 days = 1 tooltip = EVTTOOLTIP_Plus_3543 } }
 		}
 		ai_chance = {
 			factor = 1
@@ -864,7 +866,7 @@ character_event = {
 	
 	# Glorious, now go home
 	option = {
-		name = EVTOPTA_PLUS_3530
+		name = EVTOPTA_Plus_3530
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -879,7 +881,7 @@ character_event = {
 	
 	# Oh noes, go home
 	option = {
-		name = EVTOPTA_PLUS_3531
+		name = EVTOPTA_Plus_3531
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -894,7 +896,7 @@ character_event = {
 	
 	# Glorious, let's go home
 	option = {
-		name = EVTOPTA_PLUS_3532
+		name = EVTOPTA_Plus_3532
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -909,7 +911,7 @@ character_event = {
 	
 	# Run for your lives!!!
 	option = {
-		name = EVTOPTA_PLUS_3533
+		name = EVTOPTA_Plus_3533
 		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
 	}
 }
@@ -924,7 +926,7 @@ character_event = {
 	
 	# Glorious, now go home
 	option = {
-		name = EVTOPTA_PLUS_3534
+		name = EVTOPTA_Plus_3534
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -939,7 +941,7 @@ character_event = {
 	
 	# Oh noes, go home
 	option = {
-		name = EVTOPTA_PLUS_3535
+		name = EVTOPTA_Plus_3535
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -954,7 +956,7 @@ character_event = {
 	
 	# Glorious, let's go home
 	option = {
-		name = EVTOPTA_PLUS_3536
+		name = EVTOPTA_Plus_3536
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -969,7 +971,7 @@ character_event = {
 	
 	# Run for your lives!!!
 	option = {
-		name = EVTOPTA_PLUS_3537
+		name = EVTOPTA_Plus_3537
 		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
 	}
 }
@@ -984,7 +986,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTA_PLUS_3538
+		name = EVTOPTA_Plus_3538
 		character_event = { id = Plus.3550 days = 15 random = 5 }
 	}
 }
@@ -1002,7 +1004,67 @@ character_event = {
 	# Also apply negative modifiers from 3538
 	
 	option = {
-		name = EVTOPTA_PLUS_3539
+		name = EVTOPTA_Plus_3539
+	}
+}
+
+#Sea front attack is successful
+character_event = {
+	id = Plus.3540
+	desc = EVTDESC_Plus_3540
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, now go home
+	option = {
+		name = EVTOPTA_Plus_3540
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Sea front attack is repelled
+character_event = {
+	id = Plus.3541
+	desc = EVTDESC_Plus_3541
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Oh noes, go home
+	option = {
+		name = EVTOPTA_Plus_3541
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#Land and sea attack is successful
+character_event = {
+	id = Plus.3542
+	desc = EVTDESC_Plus_3542
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Glorious, now go home
+	option = {
+		name = EVTOPTA_Plus_3542
+		character_event = { id = Plus.3550 days = 15 random = 5 }
+	}
+}
+
+#You're discovered and take heavy losses (land and sea attack)
+character_event = {
+	id = Plus.3543
+	desc = EVTDESC_Plus_3543
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	# Run for your lives!!!
+	option = {
+		name = EVTOPTA_Plus_3543
+		character_event = { id = Plus.3550 days = 15 random = 5 tooltip = EVTTOOLTIP_Plus_3550 }
 	}
 }
 
@@ -1016,7 +1078,7 @@ character_event = {
 	
 	# Until next year.
 	option = {
-		name = EVTOPTA_PLUS_3550
+		name = EVTOPTA_Plus_3550
 		remove_character_modifier = gone_raiding
 		add_character_modifier = { name = raid_cooldown duration = 270 }
 	}
