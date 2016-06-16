@@ -1173,6 +1173,7 @@ character_event = { # AI Spouse finder
 		is_betrothed = no
 		is_pregnant = no
 		can_marry = yes
+		is_consort = no
 		fertility = 0.01
 		OR = {
 			NOT = { age = 40 }
@@ -1330,6 +1331,7 @@ character_event = { # Clear spouse finder flag
 			is_betrothed = yes
 			is_pregnant = yes
 			can_marry = no
+			is_consort = yes
 			trait = incapable
 			trait = infirm
 			trait = in_hiding
@@ -3541,10 +3543,9 @@ character_event = { # Secondary Startup event
 			}
 		}
 
-		# add daughters for early bookmarks
+		# add children, primarily daughters, for early bookmarks
 		random_playable_ruler = {
 			limit = {
-				ai = yes
 				age = 32
 				OR = {
 					higher_tier_than = BARON
@@ -3555,7 +3556,6 @@ character_event = { # Secondary Startup event
 					holy_order = yes
 					mercenary = yes
 					is_theocracy = yes
-					age = 51
 					year = 1065
 					any_child = { is_female = yes }
 					has_character_flag = daughter_check
@@ -3646,6 +3646,21 @@ character_event = { # Secondary Startup event
 				add_law = demesne_laws_4
 			}
 		}
+		
+		# set the king's peace to 0 if none are active
+		any_title = {
+			if = {
+				limit = {
+					tier = KING
+					NOR = {
+						has_law = kings_peace_0
+						has_law = kings_peace_1
+						has_law = kings_peace_2
+					}
+				}
+				add_law = kings_peace_0
+			}
+		}		
 		
 		# mark titles that start at CA 0 and should not be destroyed if reduced
 		any_title = {
@@ -5590,82 +5605,12 @@ character_event = { # adds daughters to early bookmarks
 					religion_group = pagan_group
 				}
 			}
-			if = {
-				limit = { NOT = { age = 35 } }
-				create_character = {
-					random_traits = yes
-					age = 16
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
+			random_list = {
+				80 = { # Favour daughters since early BMs have almost no females
+					generate_daughters_early_bm_effect = yes
 				}
-			}
-			if = {
-				limit = {
-					age = 35
-					NOT = { age = 38 }
-				}
-				create_character = {
-					random_traits = yes
-					age = 17
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
-				}
-			}
-			if = {
-				limit = {
-					age = 38
-					NOT = { age = 41 }
-				}
-				create_character = {
-					random_traits = yes
-					age = 18
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
-				}
-			}
-			if = {
-				limit = {
-					age = 41
-					NOT = { age = 44 }
-				}
-				create_character = {
-					random_traits = yes
-					age = 19
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
-				}
-			}
-			if = {
-				limit = {
-					age = 44
-					NOT = { age = 47 }
-				}
-				create_character = {
-					random_traits = yes
-					age = 20
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
-				}
-			}
-			if = {
-				limit = { age = 47 }
-				create_character = {
-					random_traits = yes
-					age = 21
-					female = yes
-					culture = ROOT
-					religion = ROOT
-					dynasty = ROOT
+				20 = {
+					generate_sons_early_bm_effect = yes
 				}
 			}
 			new_character = {
@@ -5698,11 +5643,17 @@ character_event = { # adds daughters to early bookmarks
 				set_character_flag = start_of_game_character
 				character_event = { id = Plus.324 }
 			}
+			random = { # Generate an extra child?
+				chance = 50
+				random_list = { # This time an equal chance of male or female
+					50 = { emf_nwo_generate_male_child = yes }
+					50 = { emf_nwo_generate_female_child = yes }
+				}
+			}
 			recalc_succession = yes
 		}
-		random_playable_ruler = {
+		random_playable_ruler = { # add children, primarily daughters, for early bookmarks
 			limit = {
-				ai = yes
 				age = 32
 				OR = {
 					higher_tier_than = BARON
@@ -5713,7 +5664,6 @@ character_event = { # adds daughters to early bookmarks
 					holy_order = yes
 					mercenary = yes
 					is_theocracy = yes
-					age = 51
 					year = 1065
 					any_child = { is_female = yes }
 					has_character_flag = daughter_check
@@ -5845,6 +5795,52 @@ character_event = {
 			defender = {
 				ROOT = { imprison = PREV }
 			}
+		}
+	}
+}
+
+character_event = {
+	id = Plus.364
+
+	# FROMFROM = character giving the title
+	# FROM = the title being given
+	# ROOT = the character receiving the title
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes # Don't force a player to change inheritance rules
+		FROM = { is_primary_holder_title = yes }
+		FROMFROM = {
+			is_liege = yes
+			is_alive = yes
+		}
+	}
+	
+	immediate = {
+		FROMFROM = { primary_title = { save_event_target_as = liege_primary_title } }
+		character_event = { id = Plus.365 days = 1 } # Needs to be delayed a day as this won't work on the first day of inheritance
+	}
+}
+
+character_event = {
+	id = Plus.365
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = { 
+		primary_title = {
+			
+		}
+		if = {
+			limit = { higher_real_tier_than = count } # Don't want those below Duke getting the wrong succession types
+			primary_title = { copy_title_laws = event_target:liege_primary_title }
+		}
+		if = {
+			limit = { NOT = { higher_real_tier_than = count } } # Only copy the gender laws for lower than duke
+			primary_title = { adjust_gender_law_effect = yes }
 		}
 	}
 }
