@@ -17,7 +17,7 @@ PROV694;Halwan;Halwan;Halwan;;Halwan;;;;;;;;;x
 PROV715;Rahba;Rahba;Rahba;;Rahba;;;;;;;;;x
 PROV716;Yamama;Yamama;Yamama;;Yamama;;;;;;;;;x
 PROV717;Najd;Najd;Najd;;Najd;;;;;;;;;x
-PROV794;Assouan;Assouan;Assouan;;Assouan;;;;;;;;;x
+PROV794;Assouan;Assouan;Assuan;;Assouan;;;;;;;;;x
 PROV825;Nafusa;Nafusa;Nafusa;;Nafusa;;;;;;;;;x
 PROV829;Ghadames;Ghadames;Ghadames;;Ghadames;;;;;;;;;x
 PROV830;Fezzan;Fezzan;Fezzan;;Fezzan;;;;;;;;;x
@@ -66,7 +66,7 @@ PROV1437;Ghurud;Ghurud;Ghurud;;Ghurud;;;;;;;;;x
 PROV1466;Monaghan;Monaghan;Monaghan;;Monaghan;;;;;;;;;x
 PROV1467;Qusayr;Qusayr;Qusayr;;Qusayr;;;;;;;;;x
 PROV1468;Fayoum;Fayoum;Fayoum;;Fayoum;;;;;;;;;x
-PROV1469;Galway;Galway;Galway;;Galway;;;;;;;;;x
+PROV1469;Galway;Galway;Galloway;;Galway;;;;;;;;;x
 PROV1470;Sligo;Sligo;Sligo;;Sligo;;;;;;;;;x
 PROV1471;Kilkenny;Kilkenny;Kilkenny;;Kilkenny;;;;;;;;;x
 PROV1472;Meirionnydd;Meirionnydd;Meirionnydd;;Meirionnydd;;;;;;;;;x
@@ -92,7 +92,7 @@ PROV1491;Alpuente;Alpuente;Alpuente;;Alpuente;;;;;;;;;x
 PROV1492;Guadalajara;Guadalajara;Guadalajara;;Guadalajara;;;;;;;;;x
 PROV1493;Palencia;Palencia;Palencia;;Palencia;;;;;;;;;x
 PROV1494;Jaén;Jaén;Jaén;;Jaén;;;;;;;;;x
-PROV1495;Corfu;Corfu;Corfu;;Corfu;;;;;;;;;x
+PROV1495;Corfu;Corfu;Korfu;;Corfu;;;;;;;;;x
 PROV1496;Porhoet;Porhoet;Porhoet;;Porhoet;;;;;;;;;x
 PROV1497;Tregor;Tregor;Tregor;;Tregor;;;;;;;;;x
 PROV1498;Montbeliard;Montbeliard;Montbeliard;;Montbeliard;;;;;;;;;x
@@ -132,8 +132,8 @@ PROV1531;Husseiniya;Husseiniya;Husseiniya;;Husseiniya;;;;;;;;;x
 PROV1532;Ibiza;Ibiza;Ibiza;;Ibiza;;;;;;;;;x
 PROV1533;Norðurland vestra;Norðurland vestra;Norðurland vestra;;Norðurland vestra;;;;;;;;;x
 PROV1534;Norðurland eystra;Norðurland eystra;Norðurland eystra;;Norðurland eystra;;;;;;;;;x
-PROV1535;Coast of Iceland;Côte d'Islande;Coast of Iceland;;Coast of Iceland;;;;;;;;;x
-PROV1536;Coast of Iceland;Côte d'Islande;Coast of Iceland;;Coast of Iceland;;;;;;;;;x
+PROV1535;Coast of Iceland;Côte d'Islande;Küste von Island;;Coast of Iceland;;;;;;;;;x
+PROV1536;Coast of Iceland;Côte d'Islande;Küste von Island;;Coast of Iceland;;;;;;;;;x
 PROV1537;Bolgatanga;Bolgatanga;Bolgatanga;;Bolgatanga;;;;;;;;;x
 PROV1538;Bamako;Bamako;Bamako;;Bamako;;;;;;;;;x
 PROV1539;Niono;Niono;Niono;;Niono;;;;;;;;;x
@@ -145,5 +145,5 @@ PROV1544;Morfil;Morfil;Morfil;;Morfil;;;;;;;;;x
 PROV1545;Waalo;Waalo;Waalo;;Waalo;;;;;;;;;x
 PROV1546;Linguere;Linguere;Linguere;;Linguere;;;;;;;;;x
 PROV1547;Matam;Matam;Matam;;Matam;;;;;;;;;x
-PROV1548;Sahara Desert;Sahara Desert;Sahara Desert;;Sahara Desert;;;;;;;;;x
+PROV1548;Sahara Desert;Sahara Desert;Wüste Sahara;;Sahara Desert;;;;;;;;;x
 PROV1549;Naqis;Naqis;Naqis;;Naqis;;;;;;;;;x
